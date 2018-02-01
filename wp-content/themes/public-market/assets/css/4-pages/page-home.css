@@ -1,0 +1,642 @@
+/*==============*/
+/*     Hero     */
+/*==============*/
+#hero{
+    width: 100%;
+    height: 100vh;
+    float: left;
+    position: relative;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+#hero h1{
+    color: #fff;
+    text-align: center;
+    font-size: 72px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    /* font-weight: 600; */
+	font-weight: 100;
+}
+#hero #video {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    float: left;
+    top: 0;
+	left: 0;
+    background-size: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+#hero #video .mask {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+	opacity: 0.3;
+    background: #103267;
+	top: 0;
+}
+#hero #video video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+    background-size: cover;
+    -webkit-transition: 1s opacity;
+    transition: 1s opacity;
+}
+#hero #video .hero-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    -webkit-transition: 1s opacity;
+    transition: 1s opacity;
+}
+#hero .arrow-content{    position: absolute;
+    bottom: 60px;
+    animation-name: arrow;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+#hero .arrow-content a{
+	    margin: 0 auto;
+    display: table;
+}
+#hero .arrow-content a img {
+    width: 100%;
+    max-width: 35px;
+    height: auto;
+}
+
+
+@keyframes arrow{
+    0%{
+    bottom: 50px;
+    }
+	50%{
+	bottom: 60px;
+	}
+    100%{
+    bottom: 50px;
+    }
+}
+
+
+@media all and (max-width:800px){
+	#hero h1{
+    font-size: 50px;
+}
+	
+#hero #video video{
+	display: none;
+}
+}
+@media all and (max-width:400px){
+	#hero h1 {
+		font-size: 40px;
+	}
+}
+@media all and (max-width:350px){
+	#hero h1 {
+    font-size: 33px;
+}
+}
+
+/*====================*/
+/*     Percentage     */
+/*====================*/
+#percentage{
+    width: 100%;
+    height: auto;
+    float: left;
+    position: relative;
+    padding: 50px 0 20px;
+    text-align: center;
+}
+#percentage h3{
+    color: #000;
+    letter-spacing: 2px;
+    font-size: 23px;
+}
+#percentage p{
+    font-family: 'FreightSans Pro Book';
+    font-size: 20px;
+}
+.pie_progress,
+.pie-2{
+	width: 100%;
+    max-width: 160px;
+	margin: 0 auto;
+    }
+.pie-2 svg{
+	animation-name: logo;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+.pie_progress__number {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: 'GothamBlack';
+    color: #0662b5;
+    letter-spacing: 4px;
+    font-size: 47px;
+    height: 100%;
+    padding-left: 7px;
+}
+.pie_progress.percentage .pie_progress__number .icon1{
+	display: block;	
+    font-style: inherit;
+}
+.pie_progress.percentage .pie_progress__number .icon2{
+	display: none;	
+}
+.pie_progress.percentage .pie_progress__number .icon3{
+	display: none;	
+    font-style: inherit;
+}
+
+.pie_progress.plus .pie_progress__number .icon1{
+	display: none;	
+    font-style: inherit;
+}
+.pie_progress.plus .pie_progress__number .icon2{
+	display: block;	
+    font-style: inherit;
+}
+.pie_progress.plus .pie_progress__number .icon3{
+	display: none;	
+    font-style: inherit;
+}
+
+.pie_progress.infinity .pie_progress__number{
+	font-size: 0;
+}
+.pie_progress.infinity .pie_progress__number .icon1{
+	display: none;	
+    font-style: inherit;
+}
+.pie_progress.infinity .pie_progress__number .icon2{
+	display: none;	
+    font-style: inherit;
+}
+.pie_progress.infinity .pie_progress__number .icon3{
+    display: block;
+    font-size: 50px;
+    font-style: inherit;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    margin-left: -12px;
+}
+
+	  .pie_progress__svg svg ellipse{
+		stroke: #e8e8e8;
+		stroke-width: 7px;
+		rx: 68;
+		ry: 68;
+	  }
+	  .pie_progress__svg svg path{
+	  }
+@media all and (max-width: 1030px){
+	#percentage p {
+    font-size: 15px;
+}
+}
+@media all and (max-width: 750px){
+	#percentage h3 {
+    font-size: 15px;
+}
+	#percentage p {
+    font-size: 15px;
+}
+}
+
+
+/*===================*/
+/*     Plataform     */
+/*===================*/
+#plataform{
+	width: 100%;
+	height: auto;
+	float: left;
+	position: relative;
+    padding: 100px 0;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#67ccf0+0,0765bb+100 */
+	background: rgb(103,204,240); /* Old browsers */ /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(103,204,240,1) 0%,rgba(7,101,187,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(103,204,240,1) 0%,rgba(7,101,187,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67ccf0', endColorstr='#0765bb',GradientType=0 ); /* IE6-9 */
+}
+#plataform h2{
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+#plataform h3.title{
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+#plataform p {
+    font-size: 18px;
+    color: #fff;
+    font-family: 'FreightSans Pro Book';
+	text-align: center;
+}
+#plataform article{
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+#plataform .topic{
+    text-align: center;
+    margin-bottom: 90px;
+	position: relative;
+	z-index: 5;
+}
+#plataform .topic .icon{
+    width: 100%;
+    height: auto;
+}
+#plataform .topic h3{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 45px auto;
+}
+#plataform .topic p{
+	font-size: 18px;
+	color: #fff;
+	font-family: 'FreightSans Pro Book';
+}
+@media all and (max-width:950px){
+	#plataform{
+		padding-bottom: 300px;
+	}
+}
+@media all and (max-width:765px){
+	#plataform{
+		padding-bottom: 0;
+	}
+}
+
+
+/*=======================*/
+/*     Floating Apps     */
+/*=======================*/
+#floating-apps{
+	width: 100%;
+	height: 370px;
+	float: left;
+	position: relative;
+	background: rgba(7,101,187,1);
+}
+#floating-apps .table{
+	width: 100%;
+	height: auto;
+	max-width: 830px;
+    position: absolute;
+	z-index: 2;
+    top: -200px;
+	left: 0;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+#floating-apps .web{
+	width: 100%;
+	height: auto;
+	max-width: 714px;
+    position: absolute;
+	z-index: 1;
+	left: 24%;
+    top: -300px;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+#floating-apps .mobile{
+	width: 100%;
+	height: auto;
+	max-width: 286px;
+    position: absolute;
+	z-index: 2;
+    right: 20px;
+	top: 0;
+    top: -410px;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+#floating-apps .bg{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+}
+@media all and (max-width:1100px){
+	#floating-apps .web {
+    left: 26%;
+    top: -250px;
+}
+}
+@media all and (max-width:950px){
+	#floating-apps {
+    height: 187px;
+}
+#floating-apps .table{
+	max-width: 570px;
+}
+	#floating-apps .web {
+    max-width: 550px;
+    left: 26%;
+    top: -270px;
+}
+	#floating-apps .mobile {
+    max-width: 208px;
+    top: -371px;
+}
+}
+@media all and (max-width:767px){
+	#floating-apps {
+    height: 455px;
+}
+#floating-apps .table{
+    max-width: 570px;
+    top: 53px;
+}
+	#floating-apps .web {
+    max-width: 550px;
+    left: 26%;
+    top: 0;
+}
+	#floating-apps .mobile {
+    max-width: 203px;
+    top: -75px;
+    right: 50px;
+}
+}
+@media all and (max-width:740px){
+#floating-apps .web {
+    left: 17%;
+}
+}
+@media all and (max-width:680px){
+#floating-apps .web {
+    max-width: 475px;
+}
+}
+@media all and (max-width:570px){
+#floating-apps .web {
+    max-width: 380px;
+}
+}
+
+@media all and (max-width:450px){
+	#floating-apps {
+    height: 220px;
+}
+#floating-apps .web {
+    max-width: 260px;
+    left: 11%;
+    top: 0;
+}
+	#floating-apps .table {
+    max-width: 242px;
+    top: 53px;
+}
+	#floating-apps .mobile {
+    max-width: 130px;
+    top: -75px;
+    right: 20px;
+}
+}
+
+
+
+
+
+/*=============*/
+/*     Why     */
+/*=============*/
+#why{
+	width: 100%;
+	height: auto;
+	float: left;
+	text-align: center;
+	position: relative;
+    padding: 230px 0 0;
+	background: #fff
+}
+#why .logo img{
+	animation-name: logo;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+#why .logo img:hover{
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/*========================*/
+/*     Loader Section     */
+/*========================*/
+
+@keyframes logo{
+    0%{
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+    }
+    100%{
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
+    }
+}
+#why h2{
+    color: #69cef1;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0 30px;
+}
+#why p{
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #000;
+    font-family: 'FreightSans Pro Book';
+}
+#why article{
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+#why .topic{
+    text-align: center;
+    margin-bottom: 90px;
+}
+#why .topic .icon{
+    width: 100%;
+    height: 70px;
+}
+#why .topic .icon img{
+    width: 100%;
+	max-width: 61px;
+    height: auto;
+}
+#why .topic h3{
+    color: #69cef1;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 45px auto;
+}
+#why .topic p{
+	font-size: 18px;
+	color: #000;
+	font-family: 'FreightSans Pro Book';
+}
+
+@media all and (max-width:520px){
+	#why h2{
+    font-size: 28px;
+    letter-spacing: 4px;
+}
+}
+@media all and (max-width:450px){
+#why {
+    padding: 155px 0 0;
+}
+}
+@media all and (max-width:330px){
+	#why h2{
+    font-size: 20px;
+}
+}
+
+
+/*=============*/
+/*     Why     */
+/*=============*/
+#find-your-flow{
+	width: 100%;
+	height: auto;
+	float: left;
+	text-align: center;
+	position: relative;
+    padding: 240px 0 100px;
+}
+#find-your-flow h2{
+    color: #69cef1;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0 30px;
+}
+
+#find-your-flow p{
+    font-size: 18px;
+    color: #fff;
+    font-family: 'FreightSans Pro Book';
+}
+#find-your-flow .parallax img{
+    width: auto;
+    height: auto;
+}
+#find-your-flow .bg{
+	top: 0;
+	position: absolute;
+}
+#find-your-flow .bg,
+#find-your-flow .bg img{
+	width: 100%;
+	height: auto;
+}
+
+#find-your-flow .btn {
+    margin-top: 10px;
+}
+@media all and (max-width:1500px){
+	#find-your-flow {
+    padding: 200px 0 100px;
+}
+}
+@media all and (max-width:770px){
+	#find-your-flow {
+    padding: 130px 0 100px;
+}
+}
+@media all and (max-width:430px){
+	#find-your-flow {
+    padding: 85px 0 80px;
+}
+}
+

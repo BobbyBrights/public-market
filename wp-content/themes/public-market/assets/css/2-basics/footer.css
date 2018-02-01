@@ -1,0 +1,132 @@
+footer{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    float: left;
+    position: relative;
+    padding: 0;
+    border-top: 1px solid #ebebeb;
+}
+footer .wrap{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 55px 30px;
+}
+footer .logo{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+footer .logo .icon1{
+    position: relative;
+    margin-right: 20px;
+    -webkit-transition: all 450ms ease-in-out;
+    transition: all 450ms ease-in-out;
+	
+}
+footer .logo:hover .icon1{
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+footer .logo .icon2{
+	
+}
+footer nav{
+    line-height: inherit;
+    height: inherit;
+    background: #fff;
+    box-shadow: none;
+    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+footer nav a{
+    color: #2055a6;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 40px;
+}
+footer .footer {
+    width: 100%;
+    height: auto;
+    /* border-top: 1px solid #ebebeb; */
+    padding: 20px 0;
+}
+footer .footer .wrap{
+    padding: 0 30px;
+    display: table;
+}
+footer .footer p{
+    font-family: 'GothamHTF-Book';
+    margin: 0;
+    float: left;
+    font-size: 12px;
+}
+footer .footer  .social{
+	float: right;
+}
+footer .footer  .social a{
+    margin-left: 20px;
+	color: #ccc;
+    font-size: 16px;
+}
+footer .footer  .social a.facebook:hover{
+	color: #3b5998;
+}
+footer .footer  .social a.twitter:hover{
+	color: #67cdf1;
+}
+footer .footer  .social a.linkedin:hover{
+	color: #3b5998;
+}
+	
+}
+footer .footer  .social a i{
+	
+}
+footer .footer  .social a.priva{
+    font-family: 'GothamHTF-Book';
+    font-size: 12px;
+    color: #666;
+}
+@media all and (max-width:690px){
+	footer .wrap {
+		display: block;
+}
+	footer .logo {
+    display: table;
+    margin: 0 auto;
+}
+	footer .logo .icon1,
+	footer .logo .icon2{
+    float: left;
+}
+	footer nav {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+		display: flex;
+    flex-direction: column-reverse;
+}
+	footer nav a {
+    margin: 10px 0;
+}
+	footer .footer .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+	footer .footer p {
+    margin: 20px 0 30px;
+}
+}
