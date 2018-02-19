@@ -1,0 +1,28 @@
+/*== selection-colors.css*/
+::-moz-selection {
+    background: $selection_color;
+}
+
+::selection {
+    background: $selection_color;
+}
+
+::-moz-selection {
+    background: $selection_color;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    -webkit-tap-highlight-color: $selection_color;
+}

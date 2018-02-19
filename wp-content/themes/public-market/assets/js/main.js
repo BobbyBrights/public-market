@@ -7,12 +7,23 @@
         $('header').toggleClass('nav-open');
     });
 
+    $('.tree-dots').click(function () {
+        $('.li-icons').toggleClass('ative');
+        $('header').toggleClass('grad');
+        $('.icons-menu').toggleClass('grad');
+    });
+
+    $('.testl').click(function () {
+        $('#hamburger').removeClass('open');
+        $('#hamburger-content').removeClass('nav-open');
+        $('header').removeClass('nav-open');
+    });
 
 
 
     // Cache selectors
     var lastId,
-        topMenu = $(".ancor"),
+        topMenu = $(".ancor , .menu-item"),
         // All list items
         menuItems = topMenu.find("a"),
         // Anchors corresponding to menu items
@@ -28,7 +39,7 @@
     menuItems.click(function (e) {
 
         var href = $(this).attr("href")
-            //offsetTop = href === "#" ? 0 : $(href).offset().top+2;  
+            //offsetTop = href === "#" ? 0 : $(href).offset().top+2;
         $('html, body').stop().animate({
             scrollTop: href === "#" ? 0 : $(href).offset().top - 58
         }, 1500);
@@ -56,74 +67,103 @@
     if(screen.width < 1025){
 		//Código para setar o Height em 100% fixVH IOSproblem
 		var bg = $("#hero");
-		
+
 		function resizeBackground() {
 		bg.height($(window).height());
 	}
 
 	$(window).resize(resizeBackground);
 	resizeBackground();
-		
+
 }
 
-
-	
-    $(window).scroll(function () {
-    	if ($(this).scrollTop() > 0) {
-    		$('.pie_progress').asPieProgress('start');
-    	}
-    });
-	
-
-
-    $('.pie_progress').asPieProgress({
-    	namespace: 'pie_progress',
-    	min: 0,
-    	max: 100,
-    	goal: 100,
-    	speed: 30, // speed of 1/100
-    	barcolor: '#000',
-    	barsize: '15',
-    	trackcolor: '#f2f2f2',
-    	fillcolor: 'none',
-    	easing: 'ease',
-    	numberCallback(n) {
-    		'use strict';
-    		const percentage = Math.round(this.getPercentage(n));
-    		return `${percentage}<i class="icon1">%</i><i class="icon2">+</i><i class="icon3">8</i>`;
-    	},
-    	contentCallback: null
-    });
-	
-	$("path").attr('stroke', 'url(#grad)');
-
-
-    //Plugin activation
-    $(window).enllax();
-
-	//Parallax
-    $('.parallax').parallax();
-	
-	// MENU HAMBURGUER ANIMATION --------------------------------
-    $('#id-landed').click(function () {
-        $('.a-landed').trigger('click');
-    });
-    $('#id-pay').click(function () {
-        $('.a-pay').trigger('click');
-    });
-    $('#id-ord').click(function () {
-        $('.a-ord').trigger('click');
-    });
-	
 	//Tabs
     $('.tabs').tabs();
-	
-	
-	
-	$(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-	
+
+
+  $('.dropdown-button').dropdown('open');
+
+
+    if (screen.width > 900) {
+
+      var swiper = new Swiper('.big-slide', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          //slidesOffsetBefore: 250,
+          grabCursor: 'false',
+          keyboard: {
+            enabled: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next.big',
+            prevEl: '.swiper-button-prev.big',
+          },
+        });
+
+      var swiper = new Swiper('.small-slide', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          //slidesOffsetBefore: 250,
+          grabCursor: 'false',
+          keyboard: {
+            enabled: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next.small',
+            prevEl: '.swiper-button-prev.small',
+          },
+        });
+
+    }
+
+
+    if (screen.width < 900) {
+
+      var swiper = new Swiper('.big-slide', {
+          slidesPerView: 1,
+          spaceBetween: 60,
+          //slidesOffsetBefore: 250,
+          grabCursor: 'false',
+          keyboard: {
+            enabled: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next.big',
+            prevEl: '.swiper-button-prev.big',
+          },
+        });
+
+      var swiper = new Swiper('.small-slide', {
+          slidesPerView: 1,
+          spaceBetween: 60,
+          //slidesOffsetBefore: 250,
+          grabCursor: 'false',
+          keyboard: {
+            enabled: true,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next.small',
+            prevEl: '.swiper-button-prev.small',
+          },
+        });
+
+    }
+
+
 })(jQuery);
-
-

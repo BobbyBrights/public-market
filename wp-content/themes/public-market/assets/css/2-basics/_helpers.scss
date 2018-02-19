@@ -1,0 +1,124 @@
+/*== helpers.css*/
+.wrap {
+    max-width: 1330px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    background: #ebebeb;
+    margin: 30px auto;
+    display: block;
+    float: left;
+    clear: both;
+}
+
+.only-mobile {
+    display: none !important;
+}
+
+.mobile-hidden {
+    display: block !important;
+}
+
+@media all and ( max-width: 770px) {
+    .only-mobile {
+        display: block !important;
+    }
+    .mobile-hidden {
+        display: none !important;
+    }
+}
+
+.preloader {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background: #3d383f;
+    width: 100%;
+    z-index: 999;
+    height: 100%;
+    float: left;
+    opacity: 0;
+    animation-name: preloader;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.preloader.sobreloader {
+    background: #fff;
+}
+
+.load {
+    position: fixed;
+    display: block;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    padding: 18px;
+    font-weight: 500;
+    background: #5d937e;
+    color: #fff;
+    bottom: -500px;
+    left: 50%;
+    right: 50%;
+    animation-name: loader;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes preloader {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        z-index: -100;
+    }
+}
+
+@keyframes loader {
+    0% {
+        top: 50%;
+        left: 50%;
+        right: 50%;
+        bottom: 50%;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        top: 50%;
+        left: 50%;
+        right: 50%;
+        bottom: 50%;
+    }
+    100% {
+        top: 40px;
+        left: 40px;
+        right: auto;
+        bottom: auto;
+    }
+}

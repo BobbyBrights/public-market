@@ -1,0 +1,105 @@
+/*== body-element.css*/
+body {
+  background-color: white;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*==================*/
+/*  Title Sections  */
+/*==================*/
+section{
+  .header-text{
+    width: fit-content;
+    height: auto;
+    text-align: left;
+    margin: 50px auto;
+    z-index: 2;
+    position: relative;
+    @include respond-to-max(1200){
+      padding: 0 30px;
+    }
+    span{
+      font-size: 16px;
+      color: $grey;
+      position: relative;
+      margin-left: 3px;
+      &:before{
+        content: '.';
+        position: absolute;
+        color: transparent;
+        width: 44px;
+        height: 2px;
+        background: $black;
+        margin-top: 12px;
+        margin-left: 26px;
+      }
+    }
+    h1{
+      font-size: 36px;
+      color: $black;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+      span{
+        font-size: 16px;
+        color: $grey;
+        position: absolute;
+        margin-left: 3px;
+        font-weight: lighter;
+        top: -20px;
+        &:before{
+          content: '.';
+          position: absolute;
+          color: transparent;
+          width: 44px;
+          height: 2px;
+          background: $black;
+          margin-top: 7px;
+          margin-left: 26px;
+        }
+      }
+    }
+    h3{
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+/*----*/
+
+p{
+  font-size: 16px;
+  color: $pcolor;
+  font-weight: 400;
+  @include respond-to-max(700){
+    font-size: 12px;
+  }
+}
+
+
+.header-title{
+  font-size: 24px;
+  color: $black;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 35px;
+  margin-bottom: 0;
+  @include respond-to-max(600){
+    font-size: 15px;
+  }
+  &:after{
+    content: ' ';
+    position: absolute;
+    width: 44px;
+    height: 2px;
+    background: $black;
+    bottom: 17px;
+    left: 0;
+  }
+}

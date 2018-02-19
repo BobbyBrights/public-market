@@ -1,0 +1,180 @@
+/*== footer.css*/
+footer {
+  width: 100%;
+  height: auto;
+  float: left;
+  background: $darkgrey;
+  .footer1{
+    width: 100%;
+    height: auto;
+    float: left;
+    .wrap{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include respond-to-max(900){
+        flex-wrap: wrap;
+        padding: 0
+      }
+      .logo{
+        float: left;
+        @include respond-to-max(900){
+          width: 100%;
+          height: auto;
+          padding: 40px 0;
+        }
+        img{
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .subscribe-box{
+        width: 60%;
+        height: auto;
+        background: $mediumgrey;
+        float: right;
+        margin-top: -50px;
+        padding: 60px 10px 60px 200px;
+        transform: skewX(-30deg);
+        box-shadow: 500px 0 0 0 $mediumgrey;
+        @include respond-to-max(1340){
+          padding-left: 100px;
+        }
+        @include respond-to-max(900){
+          width: 100%;
+          height: auto;
+          transform: skewX(0);
+          margin-top: 0;
+          padding: 60px 30px;
+        }
+        .subs-content{
+          transform: skewX(30deg);
+          @include respond-to-max(900){
+            transform: skewX(0);
+          }
+          h3{
+            color: $white;
+            font-weight: 600;
+          }
+          form{
+            display: flex;
+            @include respond-to-max(550){
+              flex-direction: column;
+            }
+            input{
+              height: 50px;
+              margin: 0;
+              text-transform: uppercase;
+              background: #fff;
+              letter-spacing: 4px;
+              padding-left: 20px;
+              border: 1px solid #fff;
+              margin-right: 20px;
+              box-sizing: border-box;
+              margin-bottom: 15px;
+            }
+            .btn{
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer2{
+    width: 100%;
+    height: auto;
+    background: $black;
+    float: left;
+    padding: 40px 0;
+    .wrap{
+      display: flex;
+      justify-content: space-between;
+      padding: 70px 120px;
+      @include respond-to-max(800){
+        flex-direction: column;
+        padding: 40px;
+      }
+      .menu{
+        @include respond-to-max(800){
+          border-bottom: 1px solid $grey;
+          margin-bottom:25px;
+        }
+
+        .title{
+          font-size: 15px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $white;
+        }
+        .columns{
+          margin-top: 45px;
+          ul{
+            li{
+              margin-bottom: 30px;
+              a{
+                font-weight: 600;
+                color: $darkwhite;
+                display: flex;
+                opacity: 0.5;
+                figure{
+                  width: 30px;
+                  height: auto;
+                  margin: 0;
+                  margin-left: -3px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+                &:hover{
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer3{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 15px 0;
+    .wrap{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include respond-to-max(600){
+        flex-direction: column;
+      }
+      .logo-gabriel{
+        width: fit-content;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        float: left;
+        @include respond-to-max(600){
+          margin-bottom: 15px;
+        }
+        p{
+          font-size: 12px;
+          font-weight: 400;
+          margin: 0;
+          color: #808083;
+        }
+        img{
+          margin-left: 10px;
+        }
+      }
+      .copy{
+        float: right;
+        color: #808083;
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+/*== component.css*/
+*,
+*:after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+nav {
+  a {
+    position: relative;
+    display: inline-block;
+    margin: 15px 25px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    font-size: 1.35em;
+    &:hover,
+    &:focus{
+        outline: none;
+    }
+  }
+}
+
+/* Effect 13: three circles */
+
+.cl-effect-13 {
+  a {
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+    &:hover,
+    &:focus {
+      color: #ba7700;
+    }
+    &:before {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      color: transparent;
+      content: '•';
+      text-shadow: 0 0 transparent;
+      font-size: 1.2em;
+      -webkit-transition: text-shadow 0.3s, color 0.3s;
+      -moz-transition: text-shadow 0.3s, color 0.3s;
+      transition: text-shadow 0.3s, color 0.3s;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    &:hover::before,
+    &:focus::before {
+      color: #fff;
+      text-shadow: 10px 0 #fff, -10px 0 #fff;
+    }
+  }
+}
+
+
+
+/* Effect 21: borders slight translate */
+.cl-effect-21 a {
+	padding: 10px;
+	color: $white;
+	font-weight: 500;
+	text-shadow: none;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.cl-effect-21 a::before,
+.cl-effect-21 a::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2.5px;
+	background: $yellow;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.cl-effect-21 a::before {
+	top: 40.6px;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+  @include respond-to-max(800){
+      top: 26.6px;
+  }
+}
+
+.cl-effect-21 a::after {
+	bottom: 40.6px;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+  @include respond-to-max(800){
+      bottom: 26.6px;
+  }
+}
+
+.cl-effect-21 a:hover,
+.cl-effect-21 a:focus {
+	color: $white;
+}
+
+.cl-effect-21 a:hover::before,
+.cl-effect-21 a:focus::before,
+.cl-effect-21 a:hover::after,
+.cl-effect-21 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+
+.btn-up {
+  position: fixed;
+  z-index: 1000;
+  left: -100px;
+  bottom: 100px;
+  background-color: #1b1b1b;
+  color: #f4dd27;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  line-height: inherit;
+  font-size: 13px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(-90deg);
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+  font-weight: 700;
+  padding: 10px 15px;
+  display: block;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  &:hover {
+    color: #fff;
+  }
+  &active{
+    left: 40px;
+  }
+}

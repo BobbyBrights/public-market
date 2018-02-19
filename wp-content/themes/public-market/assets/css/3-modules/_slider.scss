@@ -1,0 +1,1374 @@
+/* ------------------------ Sliders - Nivo, Flex and Revolution Slider ----------------------------------- */
+#slider-area {
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  background: #3F3B39;
+
+  .image-area {
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  #slider-error {
+    padding: 240px 0;
+    color: #bbb;
+  }
+}
+/*--------------------------------------------------------------------*/
+/*	Responsive Flex Slider Styles
+/*--------------------------------------------------------------------*/
+/* * jQuery FlexSlider v2.0 * http://www.woothemes.com/flexslider/ * */
+/* Browser Resets */
+
+.flex-container a:active,
+.flex-container a:focus,
+.flexslider a:active,
+.flexslider a:focus {
+  outline: none;
+}
+
+.flex-control-nav,
+.flex-direction-nav,
+.slides {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* FlexSlider Necessary Styles *********************************/
+
+.flexslider {
+  margin: 0;
+  padding: 0;
+
+  .slides {
+    > li {
+      display: none;
+      /*-webkit-backface-visibility: hidden; */
+    }
+
+    img {
+      display: block;
+    }
+  }
+}
+/* Causes issues with fixed backgrounds in Chrome/Safari */
+/* Hide the slides before the JS is loaded. Avoids image jumping */ 
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+/* Clearfix for the .slides element */
+
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+html[xmlns] .slides {
+  display: block;
+}
+
+* html .slides {
+  height: 1%;
+}
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you * include js that eliminates this class on page load */
+
+.no-js .slides > li:first-child {
+  display: block;
+}
+/* FlexSlider Default Theme *********************************/
+
+.flex-slider-container {
+  position: relative;
+}
+
+.flexslider {
+  background: transparent;
+  padding: 0;
+  max-width: 100%;
+  position: relative;
+  zoom: 1;
+}
+
+.flex-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 2s ease 1s;
+  -moz-transition: all 2s ease 1s;
+  transition: all 2s ease 1s;
+}
+
+.loading .flex-viewport {
+  max-height: 300px;
+}
+
+.flexslider .slides {
+  zoom: 1;
+}
+
+.carousel li {
+  margin-right: 5px;
+}
+
+.flexslider .slides,
+.widget .flexslider .slides {
+  > li {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    position: relative;
+  }
+
+  .image-area {
+    float: none;
+  }
+
+  img {
+    display: block;
+  }
+}
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+/* Caption styles */
+
+.flex-caption {
+  position: absolute;
+  left: 150px;
+  bottom: 30%;
+  width: 35%;
+  max-width: 450px;
+  z-index: 89;
+  @include respond-between(768, 959) {
+    left: 70px;
+    bottom: 20%;
+  }
+
+  .flex-summary,
+  a {
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=55);
+    /*IE*/
+  }
+
+  a {
+    display: inline !important;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 50px;
+    color: #EFEFEF !important;
+    padding: 2px 15px;
+    @include respond-between(768, 959) {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  .flex-summary {
+    color: #ccc;
+    margin-top: 5px;
+    padding: 10px 15px;
+    margin: 10px 0 0;
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+/* Direction Nav */
+
+.flex-direction-nav,
+.widget .flex-direction-nav {
+  *height: 0;
+  display: block;
+
+  li {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  a {
+    display: block;
+    position: absolute;
+    background-color: #888;
+    z-index: 10;
+    /* IE */
+    background-color: rgba(55, 55, 55, 0.6);
+    height: 25px;
+    width: 25px;
+    box-sizing: content-box;
+    @include vendorize(border-radius, 2px);
+    @include vendorize(transition, all 0.2s linear);
+  }
+
+  a:hover {
+    background-color: #666;
+    /* IE */
+    background-color: rgba(51, 51, 51, 0.8);
+  }
+
+  .flex-next {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .flex-prev {
+    right: 40px;
+    bottom: 10px;
+  }
+
+  span {
+    font-size: 22px;
+    color: #ddd;
+    display: block;
+    text-align: center;
+  }
+}
+/* Control Nav */
+
+.flex-control-nav,
+.widget .flex-control-nav {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+#slider-area .flex-control-nav,
+.segment .flex-control-nav {
+  bottom: 0;
+}
+
+.flex-control-nav li,
+.widget .flex-control-nav li {
+  margin: 0 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+
+  &:hover {
+    margin: 0 4px;
+    padding: 0;
+    border: none;
+  }
+}
+
+.flex-control-paging li a {
+  width: 11px;
+  height: 11px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  text-indent: -9999px;
+
+  &.flex-active,
+  &:hover {
+    background-color: #bbb;
+  }
+  background-color: #ddd;
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+}
+
+.flex-control-nav li a {
+  &.flex-active,
+  &:hover {
+    background-color: #bbb;
+  }
+}
+
+ol.flexlite-control-nav.flexlite-control-paging {
+  display: none;
+}
+
+.flex-control-thumbs {
+  margin: 5px 0 0;
+  position: static;
+  overflow: hidden;
+
+  li {
+    width: 25%;
+    float: left;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    opacity: 0.7;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+      -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+    }
+  }
+
+  .flex-active {
+    opacity: 1;
+    -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    cursor: default;
+  }
+}
+
+.segment .flex-control-nav li a {
+  width: 20px;
+  height: 20px;
+
+  &.flex-active,
+  &:hover {
+    background-color: #999;
+  }
+}
+/* ----- Inline flex slider styling ----------*/
+
+.flex-slider-container,
+.tab-slider-container {
+  &.loading {
+    background: #202834 url("images/sliders/ajax-loader.gif") no-repeat 50% 50%;
+  }
+
+  .flexslider {
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 2;
+  }
+
+  &.loading .flexslider {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+/* --------- Slider Area styling ------ */
+
+#slider-area {
+  .flex-direction-nav {
+    a {
+      width: 60px;
+      height: 60px;
+      bottom: 50%;
+      top: 45%;
+      border-radius: 2px;
+    }
+
+    .flex-next span,
+    .flex-prev span {
+      height: 18px;
+      width: 12px;
+      top: 20px;
+      left: 24px;
+    }
+
+    .flex-next span {
+      background-position: right top;
+    }
+
+    .flex-prev span {
+      background-position: left top;
+    }
+  }
+
+  .flexslider {
+    .flex-next {
+      right: 10px;
+    }
+
+    .flex-prev {
+      left: 10px;
+    }
+  }
+
+  .rev_slider_wrapper {
+    border-bottom: none;
+  }
+}
+/*--------------------------------------------------------------------*/
+/*	OTHER SLIDERS - NIVO
+/*--------------------------------------------------------------------*/
+/* === The Nivo Slider styles - do not modify unless you know what you are doing == */
+/* === For customization, see below === */
+
+.nivoSlider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: none;
+  }
+}
+
+.nivo-main-image {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+}
+/* If an image is wrapped in a link */
+
+.nivoSlider a.nivo-imageLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 6;
+  display: none;
+  background: white;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+/* The slices and boxes in the Slider */
+
+.nivo-slice {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  top: 0;
+}
+
+.nivo-box {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+
+  img {
+    display: block;
+  }
+}
+/* Caption styles - customized */
+
+.nivo-caption {
+  position: absolute;
+  left: 150px;
+  bottom: 35%;
+  color: #EFEFEF;
+  font-weight: normal;
+  width: 40%;
+  max-width: 400px;
+  z-index: 8;
+  overflow: hidden;
+  display: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  @include respond-between(768, 959) {
+    left: 70px;
+    bottom: 20%;
+  }
+
+  .nivo-summary {
+    margin: 15px 0 0;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 5px 15px;
+  }
+
+  a {
+    font-size: 32px;
+    line-height: 1.3em;
+    margin: 0;
+    color: #EFEFEF !important;
+    padding: 6px 15px;
+    @include respond-between(768, 959) {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  .nivo-summary,
+  a {
+    background: #333;
+    opacity: 0.6;
+    -moz-opacity: 0.6;
+    -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+  }
+}
+
+.nivo-html-caption {
+  display: none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+
+.nivo-directionNav a {
+  position: absolute;
+  top: 45%;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.nivo-prevNav {
+  left: 0;
+}
+
+.nivo-nextNav {
+  right: 0;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+
+.nivo-controlNav {
+  text-align: center;
+  padding: 15px 0;
+
+  a {
+    cursor: pointer;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+/* ===== Nivo Slider Custom styles - modify below if required === */
+
+#nivo-slider-wrap {
+  position: relative;
+  background: #202834 url("images/sliders/ajax-loader.gif") no-repeat 50% 50%;
+}
+
+#nivo-slider {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  color: black;
+  height: auto;
+  overflow: hidden;
+
+  &.loading {
+    height: 500px;
+    visibility: hidden;
+    opacity: 0;
+    @include respond-to-max(1400) {
+      height: 350px;
+    }
+    @include respond-to-max(1024) {
+      height: 310px;
+    }
+    @include respond-to-max(767) {
+      height: 230px;
+    }
+    @include respond-to-max(479) {
+      height: 140px;
+    }
+  }
+}
+
+#nivo-slider a {
+  border: 0;
+}
+
+.nivo-controlNav {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  z-index: 8;
+  margin-left: -30px;
+
+  a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-right: 8px;
+    float: left;
+    text-indent: -9999px;
+    background-color: #bbb;
+    /* IE */
+    background: rgba(180, 180, 180, 0.7);
+
+    &.active,
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.nivo-directionNav a {
+  display: block;
+  text-indent: -9999px;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  bottom: 50%;
+  top: 45%;
+  background-color: #888;
+  /* IE */
+  background: rgba(77, 76, 76, 0.6);
+  position: absolute;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: #666;
+    /* IE */
+    background: rgba(51, 51, 51, 0.8);
+  }
+}
+/* Direction nav styles (e.g. Next & Prev) */
+
+a {
+  &.nivo-nextNav {
+    right: 0;
+  }
+
+  &.nivo-prevNav {
+    left: 0;
+  }
+}
+
+.nivo-directionNav {
+  .nivo-prevNav span {
+    position: absolute;
+    height: 18px;
+    width: 12px;
+    top: 10px;
+    left: 14px;
+    display: block;
+    background-image: url("images/sliders/arrows-sliders.png");
+  }
+
+  .nivo-nextNav span {
+    position: absolute;
+    height: 18px;
+    width: 12px;
+    top: 10px;
+    left: 14px;
+    display: block;
+    background-image: url("images/sliders/arrows-sliders.png");
+    background-position: right top;
+  }
+
+  .nivo-prevNav span {
+    background-position: left top;
+  }
+}
+/* ----------- Responsive styles ------ */
+@include respond-to-max(767) {
+  /* Sliders */
+  #nivo-slider-wrap {
+    padding: 0;
+  }
+
+  .nivo-controlNav {
+    display: none;
+  }
+
+  .nivo-caption {
+    left: 50px;
+    bottom: 20%;
+    width: 50%;
+
+    a {
+      font-size: 22px;
+    }
+  }
+
+  .flex-caption .flex-summary,
+  .nivo-caption .nivo-summary {
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .nivo-directionNav {
+    a {
+      height: 30px;
+      width: 30px;
+    }
+
+    .nivo-nextNav span,
+    .nivo-prevNav span {
+      left: 9px;
+      top: 6px;
+    }
+  }
+
+  .flex-caption {
+    left: 0;
+    bottom: 20px;
+    max-width: 60%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 50%;
+
+    a {
+      font-size: 16px;
+    }
+  }
+
+  #slider-area {
+    .flex-control-nav,
+    .flex-direction-nav {
+      display: none;
+    }
+  }
+}
+@include respond-to-max(479) {
+  /* SLiders */
+  .flex-caption a,
+  .nivo-caption a {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .flex-caption .flex-summary,
+  .nivo-caption .nivo-summary {
+    display: none;
+  }
+}
+/**
+* BxSlider v4.0 - Fully loaded, responsive content slider
+* http://bxslider.com by Steven Wanderski
+*/
+/** RESET AND LAYOUT ===================================*/
+
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 0;
+  *zoom: 1;
+  padding: 0 30px;
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .bx-viewport {
+    border: solid #fff 5px;
+    left: -5px;
+    background: #fff;
+  }
+
+  .bx-controls-auto,
+  .bx-pager {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+  }
+
+  .bx-loading {
+    min-height: 50px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+  }
+
+  .bx-pager {
+    text-align: center;
+    font-size: 0.85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #666;
+    padding-top: 20px;
+
+    .bx-pager-item {
+      display: inline-block;
+      *zoom: 1;
+      *display: inline;
+    }
+  }
+
+  .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+  }
+
+  .bx-pager.bx-default-pager a {
+    background: #666;
+    text-indent: -9999px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    &.active,
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  .bx-controls-auto {
+    text-align: center;
+
+    .bx-start {
+      display: block;
+      text-indent: -9999px;
+      width: 10px;
+      height: 11px;
+      outline: 0;
+      background: url("images/sliders/controls.png") -86px -11px no-repeat;
+      margin: 0 3px;
+
+      &.active,
+      &:hover {
+        background-position: -86px 0;
+      }
+    }
+
+    .bx-stop {
+      display: block;
+      text-indent: -9999px;
+      width: 9px;
+      height: 11px;
+      outline: 0;
+      background: url("images/sliders/controls.png") -86px -44px no-repeat;
+      margin: 0 3px;
+
+      &.active,
+      &:hover {
+        background-position: -86px -33px;
+      }
+    }
+  }
+
+  .bx-controls.bx-has-controls-auto.bx-has-pager {
+    .bx-pager {
+      text-align: left;
+      width: 80%;
+    }
+
+    .bx-controls-auto {
+      right: 0;
+      width: 35px;
+    }
+  }
+
+  .bx-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #666;
+    background-color: #888;
+    /* IE */
+    background: rgba(80, 80, 80, 0.75);
+    width: 100%;
+
+    span {
+      color: #fff;
+      font-family: Arial;
+      display: block;
+      font-size: 0.85em;
+      padding: 10px;
+    }
+  }
+}
+/*  ======================================================
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ *  ======================================================
+ */
+/* clearfix */
+
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+/* display none until init */
+.owl-carousel {
+  display: block;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y;
+}
+
+.owl-carousel .owl-wrapper {
+  display: block;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out;
+}
+
+.owl-carousel .owl-item {
+  float: left;
+}
+
+.owl-controls .owl-buttons div,
+.owl-controls .owl-page {
+  cursor: pointer;
+}
+
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* mouse grab icon */
+.grabbing {
+  cursor: url("images/sliders/grabbing.png") 8 8, move;
+}
+/* fix */
+.owl-carousel .owl-item,
+.owl-carousel .owl-wrapper {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+/* ======================================================
+* 	Owl Carousel Owl Demo Theme
+*	v1.3.3
+*   =====================================================
+*/
+
+.owl-theme .owl-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+/* Styling Next and Prev buttons */
+
+.owl-theme .owl-controls .owl-buttons div {
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+  filter: Alpha(Opacity=80);
+  /*IE7 fix*/
+  opacity: 0.8;
+}
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+  text-decoration: none;
+}
+/* Styling Pagination*/
+
+.owl-theme .owl-controls .owl-page {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+}
+
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 24px;
+  height: 5px;
+  margin: 5px;
+  filter: Alpha(Opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #8997A0;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+}
+/* If PaginationNumbers is true */
+
+.owl-theme .owl-controls .owl-page span.owl-numbers {
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+/* preloading images */
+.owl-item.loading {
+  min-height: 150px;
+  background: url("images/sliders/AjaxLoader.gif") no-repeat center center;
+}
+/** THEME ===================================*/
+/* Owl Carousel Customization */
+
+.carousel-container .owl-carousel.owl-theme {
+  z-index: 1;
+
+  .owl-prev {
+    margin-right: 6px;
+  }
+
+  .owl-prev:hover {
+    opacity: 0.7;
+    -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+  }
+
+  .owl-next:hover {
+    opacity: 0.8;
+    -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+  }
+
+  .owl-buttons {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 10px;
+    list-style: none;
+
+    div {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: #8997A0;
+      @include vendorize(transition, opacity 0.3s ease-in-out);
+      border-radius: 2px;
+
+      i {
+        font-size: 10px;
+        line-height: 32px;
+        display: block;
+        color: #FFF;
+      }
+    }
+  }
+}
+
+.gallery-carousel .carousel-container .owl-carousel.owl-theme {
+  .owl-next,
+  .owl-prev {
+    background: #fff;
+  }
+
+  .owl-buttons {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.carousel-container {
+  .post-snippets .hentry {
+    margin: 0 10px 20px;
+  }
+  @include respond-to-max(767) {
+    .entry-summary {
+      display: none;
+    }
+
+    .flexslider .slides .image-area {
+      padding: 2px;
+    }
+  }
+  @include respond-to-max(479) {
+    .type-portfolio .image-info {
+      .image-info-buttons {
+        display: none;
+      }
+
+      h3.post-title {
+        top: 25%;
+      }
+    }
+  }
+}
+/* TODO: Remove references to iphone-slider-container - kept for compatibility to previous versions of theme */
+
+.iphone-slider-container,
+.smartphone-slider {
+  position: relative;
+  margin: 0 auto;
+  z-index: 2;
+
+  .flex-next {
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+  }
+
+  .flex-prev {
+    right: 40px;
+    bottom: 10px;
+    border-radius: 50%;
+  }
+
+  .flex-next,
+  .flex-prev {
+    display: none;
+  }
+
+  .flex-slider-container:hover {
+    .flex-next,
+    .flex-prev {
+      display: block;
+    }
+  }
+}
+
+.iphone-slider-container .flex-slider-container.loading,
+.smartphone-slider .flex-slider-container.loading {
+  background-color: #333;
+}
+
+.smartphone-slider .flex-slider-container {
+  position: absolute;
+  overflow: hidden;
+}
+
+.smartphone-slider .flexslider {
+  max-height: 100%;
+}
+
+.iphone-slider-container {
+  max-width: 408px;
+}
+
+.ipad-slider-container {
+  max-width: 940px;
+}
+
+.iphone7black-slider-container,
+.iphone7gold-slider-container,
+.iphone7jetblack-slider-container,
+.iphone7rosegold-slider-container,
+.iphone7silver-slider-container {
+  max-width: 400px;
+}
+
+.galaxys7-slider-container {
+  max-width: 400px;
+}
+
+.nexus6p-slider-container {
+  max-width: 420px;
+}
+
+.googlepixelblack-slider-container,
+.googlepixelblue-slider-container,
+.googlepixelsilver-slider-container {
+  max-width: 400px;
+}
+
+.galaxys4-slider-container,
+.htcone-slider-container {
+  max-width: 331px;
+}
+
+.imac-slider-container {
+  max-width: 790px;
+}
+
+.macbook-slider-container {
+  max-width: 800px;
+}
+
+.browser-slider-container {
+  max-width: 875px;
+  @include vendorize(box-shadow, 1px 1px 2px 1px rgba(128, 128, 128, 0.25));
+}
+
+.browser-slider-container,
+.imac-slider-container,
+.macbook-slider-container {
+  .flex-next {
+    right: 10px;
+    top: 10px;
+  }
+
+  .flex-prev {
+    right: 40px;
+    top: 10px;
+  }
+}
+
+.iphone7black-slider-container .flex-slider-container,
+.iphone7gold-slider-container .flex-slider-container,
+.iphone7jetblack-slider-container .flex-slider-container,
+.iphone7rosegold-slider-container .flex-slider-container,
+.iphone7silver-slider-container .flex-slider-container {
+  top: 11.3%;
+  left: 6.3%;
+  width: 87.5%;
+  height: auto;
+}
+
+.galaxys7-slider-container .flex-slider-container {
+  top: 10.8%;
+  left: 5%;
+  width: 90%;
+  height: auto;
+}
+
+.nexus6p-slider-container .flex-slider-container {
+  top: 10.6%;
+  left: 8.6%;
+  width: 83.4%;
+  height: auto;
+}
+
+.googlepixelblack-slider-container .flex-slider-container,
+.googlepixelblue-slider-container .flex-slider-container,
+.googlepixelsilver-slider-container .flex-slider-container {
+  top: 10.2%;
+  left: 5.6%;
+  width: 88.4%;
+  height: auto;
+}
+
+.iphone-slider-container .flex-slider-container {
+  width: 69.2%;
+  height: auto;
+  top: 10.7%;
+  left: 12.9%;
+}
+
+.ipad-slider-container .flex-slider-container {
+  top: 6.0%;
+  left: 12.5%;
+  width: 74.7%;
+  height: 78.4%;
+}
+
+.galaxys4-slider-container .flex-slider-container {
+  top: 9.2%;
+  left: 4.8%;
+  width: 90.8%;
+  height: 81.6%;
+}
+
+.htcone-slider-container .flex-slider-container {
+  top: 9.5%;
+  left: 6.5%;
+  width: 87%;
+  height: 76.4%;
+}
+
+.imac-slider-container .flex-slider-container {
+  top: 5%;
+  width: 91%;
+  left: 4.5%;
+  height: 61.2%;
+}
+
+.macbook-slider-container .flex-slider-container {
+  top: 5.7%;
+  left: 14.7%;
+  width: 71.3%;
+  height: 74.1%;
+}
+
+.browser-slider-container .flex-slider-container {
+  top: 11.2%;
+  width: 100%;
+  left: 0;
+  height: 88.5%;
+}
+
+.browser-slider-container .address-bar {
+  position: absolute;
+  left: 13%;
+  top: 7.2%;
+  font-size: 12px;
+  line-height: 12px;
+  @include respond-to-max(767) {
+    display: none;
+  }
+}
+/* Tab Slider and Team Slider navigation */
+
+.widget ul.tab-list,
+ul.tab-list {
+  border-bottom: 1px solid #fff;
+  margin: 0 0 40px;
+
+  li {
+    display: inline;
+    margin: 0 0 0 0;
+    border: none;
+    padding: 0;
+    @include respond-to-max(767) {
+      margin-right: 30px;
+    }
+
+    a {
+      padding: 0 25px;
+      color: #292929;
+      display: inline-block;
+      font-size: 18px;
+      line-height: 48px;
+
+      &.flex-active,
+      &.visible {
+        border-bottom: 3px solid #fff;
+      }
+
+      &:hover {
+        color: #000;
+      }
+    }
+    @include respond-to-max(479) {
+      margin-right: 25px;
+
+      a {
+        line-height: 36px;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+/*== links.css*/
+
+a {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    transition: all 300ms ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: #a7caff;
+    text-decoration: none;
+}
